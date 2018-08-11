@@ -11,7 +11,7 @@ app.get('/ping', (req, res)=>{
 });
 
 app.get("/", (req, res)=>{
-    const uniqueIps = ips.map(ip => string.split(":")[0]).filter(function(item, pos) {
+    const uniqueIps = ips.map(ip => ip.split(":")[0]).filter(function(item, pos) {
         return ips.indexOf(item) == pos;
     });
 
