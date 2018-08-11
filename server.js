@@ -11,7 +11,11 @@ app.get('/ping', (req, res)=>{
 });
 
 app.get("/", (req, res)=>{
-    res.send(JSON.stringify(ips));
+    const uniqueIps = ips.filter(function(item, pos) {
+        return ips.indexOf(item) == pos;
+    });
+
+    res.send(uniqueIps);
 });
 
 app.listen(process.env.PORT || 8080);
