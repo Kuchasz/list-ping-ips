@@ -6,7 +6,7 @@ const ips = [];
 
 app.get('/ping', (req, res)=>{
     ips.push(req.ip);
-    res.send(JSON.stringify(req));
+    res.send(req.ip);
 });
 
 app.get("/", (req, res)=>{
